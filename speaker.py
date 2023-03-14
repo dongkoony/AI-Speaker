@@ -13,7 +13,7 @@ def listen(recognizer, audio):
     answer(text)
   except sr.UnknownValueError:
     print('음성 인식 실패.') # 음성 인식 실패한 경우 출력
-  except sr.RequestError as e:  
+  except sr.RequestError as e:
     print('요청 실패 : {0}'.format(e)) # API Key 오류, 네트워크 확인
 
 # Answer
