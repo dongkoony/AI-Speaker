@@ -7,7 +7,7 @@ pip3 install playsound==1.2.2 # 버그로 인한 1.3.0 -> 1.2.2 다운그레이�
 
 
 pip3 install Pyaudio
-# Pyaudio error시 portaudio 설치
+#### Pyaudio error시 portaudio 설치
 
 pip3 install SpeechRecognition
 
