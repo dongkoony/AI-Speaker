@@ -1,5 +1,6 @@
 import time, os
 import speech_recognition as sr
+import openai
 
 from gtts import gTTS
 from playsound import playsound
@@ -19,22 +20,25 @@ def listen(recognizer, audio):
 # Answer
 def answer(input_text):
     answer_text = ''
-    # 테스트 예제 출력 문구 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     if '안녕' in input_text:
       answer_text = '안녕하세요. 반갑습니다.'
-    elif '날씨' in input_text:
-      answer_text = '오늘의 서울 기온은 10도 이며, 맑은 하늘이 예상 됩니다.'
-    elif '환율' in input_text:
-      answer_text = '원 달러 환율은 1300원 입니다.'
-    elif '고마워' in input_text:
-      answer_text = '별 말씀을요.'
+    
+    # 테스트 예제 출력 문구 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    # elif '날씨' in input_text:
+    #   answer_text = '오늘의 서울 기온은 10도 이며, 맑은 하늘이 예상 됩니다.'
+    # elif '환율' in input_text:
+    #   answer_text = '원 달러 환율은 1300원 입니다.'
+    # elif '고마워' in input_text:
+    #   answer_text = '별 말씀을요.'
+    # 테스트 예제 출력 문구 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    
     elif '종료' in input_text:
       answer_text = '도움 필요하시면 말씀하세요.'
       stop_listening(wait_for_stop=False) # 백그라운드 아웃
     else:
       answer_text = '다시 한 번 말씀해 주시겠어요?'
     speak(answer_text)
-    # 테스트 예제 출력 문구 #<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 # 읽기(TTS)
 def speak(text):
   print('[인공지능]' + text)
