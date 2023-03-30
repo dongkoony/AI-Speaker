@@ -7,7 +7,7 @@ from playsound import playsound
 from pyaudio import PyAudio
 
 # Chat GPT API Key
-openai.api_key = os.getenv("GPT KEY")
+openai.api_key = ("챗 gpt API 키 넣는 자리")
 
 # 음성 인식(Listen, STT)
 def listen(recognizer, audio):
