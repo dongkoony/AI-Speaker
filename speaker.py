@@ -6,6 +6,9 @@ from gtts import gTTS
 from playsound import playsound
 from pyaudio import PyAudio
 
+# Chat GPT API Key
+# openai.api_key = os.getenv("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")
+
 # 음성 인식(Listen, STT)
 def listen(recognizer, audio):
   try:
@@ -20,6 +23,8 @@ def listen(recognizer, audio):
 # Answer
 def answer(input_text):
     answer_text = ''
+    
+    
     if '안녕' in input_text:
       answer_text = '안녕하세요. 반갑습니다.'
     
