@@ -7,6 +7,10 @@ python3.10
 
 ## pip3 install
 ```
+pip3 install openai # Chat-GPT API 사용 하기 위한 설치
+```
+
+```
 pip3 install gTTS
 ```
 ```
