@@ -7,7 +7,7 @@ from playsound import playsound
 from pyaudio import PyAudio
 
 # Chat GPT API Key
-openai.api_key = os.getenv("chat-gpt key")
+openai.api_key = os.getenv("GPT KEY")
 
 # 음성 인식(Listen, STT)
 def listen(recognizer, audio):
@@ -19,6 +19,19 @@ def listen(recognizer, audio):
     print('음성 인식 실패.') # 음성 인식 실패한 경우 출력
   except sr.RequestError as e:
     print('요청 실패 : {0}'.format(e)) # API Key 오류, 네트워크 확인
+
+def answer(input_text):
+    answer_text = ''
+    
+# AI-Speacker 호출
+    if '안녕' in input_text:
+      answer_text = '안녕하세요. 반갑습니다.'
+    elif '종료' in input_text:
+      answer_text = '도움 필요하시면 말씀하세요.'
+      stop_listening(wait_for_stop=False) # 백그라운드 아웃
+    else:
+      answer_text = '다시 한 번 말씀해 주시겠어요?'
+    speak(answer_text)
 
 
 # Chat-GPT Answer
@@ -35,7 +48,7 @@ def answer(input_text):
     message = completions.choices[0].text.strip()
     speak(message)
 
-# # Answer
+# TEST Answer
 # def answer(input_text):
 #     answer_text = ''
     
