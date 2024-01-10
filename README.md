@@ -57,10 +57,9 @@ ec2 ubuntu 환경 내 사운드카드 없음. 인풋 아웃풋 불가능.
 ```
 $ sudo apt-get install alsa-base pulseaudio
 ```
-pyalsa install
 
-https://www.alsa-project.org/files/pub/pyalsa/
+##### pyalsa install
+```
+[pip3 install SpeechRecognition](https://www.alsa-project.org/files/pub/pyalsa/)
+```
 
-
-
-docker -> container -> push -> cicd -> kube -> ?
